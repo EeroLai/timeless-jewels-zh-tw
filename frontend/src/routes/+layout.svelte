@@ -33,9 +33,9 @@
     <div class="flex flex-col">
       <div class="py-10 flex flex-col justify-between">
         <div>
-          <h1 class="text-white mb-10 text-center">Timeless Calculator</h1>
+          <h1 class="text-white mb-10 text-center">永恆珠寶計算器</h1>
 
-          <h2 class="text-center">Loading...</h2>
+          <h2 class="text-center">載入中...</h2>
         </div>
       </div>
     </div>

@@ -73,31 +73,31 @@
 <div class="py-10 flex flex-row justify-center w-screen h-screen">
   <div class="flex flex-col justify-between w-1/3">
     <div>
-      <h1 class="text-white mb-10 text-center">Timeless Calculator</h1>
+      <h1 class="text-white mb-10 text-center">永恆珠寶計算器</h1>
 
       <a href="{base}/tree">
-        <h2 class="text-white mb-10 text-center underline text-orange-500">Skill Tree View</h2>
+        <h2 class="text-white mb-10 text-center underline text-orange-500">技能樹檢視</h2>
       </a>
 
       <div class="themed">
-        <h3 class="mb-2">Timeless Jewel</h3>
+        <h3 class="mb-2">永恆珠寶</h3>
         <Select items={jewels} bind:value={selectedJewel} on:select={updateUrl} />
 
         {#if selectedJewel}
           <div class="mt-4">
-            <h3 class="mb-2">Conqueror</h3>
+            <h3 class="mb-2">征服者</h3>
             <Select items={conquerors} bind:value={selectedConqueror} on:select={updateUrl} />
           </div>
 
           {#if selectedConqueror && Object.keys(data.TimelessJewelConquerors[selectedJewel.value]).indexOf(selectedConqueror.value) >= 0}
             <div class="mt-4">
-              <h3 class="mb-2">Passive Skill</h3>
+              <h3 class="mb-2">天賦</h3>
               <Select items={passiveSkills} bind:value={selectedPassiveSkill} on:select={updateUrl} />
             </div>
 
             {#if selectedPassiveSkill}
               <div class="mt-4">
-                <h3 class="mb-2">Seed</h3>
+                <h3 class="mb-2">種子</h3>
                 <input
                   type="number"
                   bind:value={seed}
@@ -107,7 +107,7 @@
                   max={data.TimelessJewelSeedRanges[selectedJewel.value].Max} />
                 {#if seed < data.TimelessJewelSeedRanges[selectedJewel.value].Min || seed > data.TimelessJewelSeedRanges[selectedJewel.value].Max}
                   <div class="mt-2">
-                    Seed must be between {data.TimelessJewelSeedRanges[selectedJewel.value].Min} and {data
+                    種子值必須介於 {data.TimelessJewelSeedRanges[selectedJewel.value].Min} 和 {data
                       .TimelessJewelSeedRanges[selectedJewel.value].Max}
                   </div>
                 {/if}
@@ -116,7 +116,7 @@
               {#if result}
                 {#if result.AlternatePassiveSkill}
                   <div class="mt-4">
-                    <h3>Alternate Passive Skill</h3>
+                    <h3>轉化後天賦</h3>
                     <span
                       >{result.AlternatePassiveSkill.Name} ({result.AlternatePassiveSkill.ID}) ({result.AlternatePassiveSkill})</span>
                   </div>
@@ -125,7 +125,7 @@
                     <ol class="mt-4 list-decimal pl-8">
                       {#each Object.keys(result.StatRolls) as roll, i}
                         {@const stat = data.GetStatByIndex(result.AlternatePassiveSkill.StatsKeys[i])}
-                        <li>{stat.Text || '<no name>'} ({stat.ID}) - {result.StatRolls[roll]}</li>
+                        <li>{stat.Text || '<未命名>'} ({stat.ID}) - {result.StatRolls[roll]}</li>
                       {/each}
                     </ol>
                   {/if}
@@ -133,7 +133,7 @@
 
                 {#if 'AlternatePassiveAdditionInformations' in result && result.AlternatePassiveAdditionInformations?.length > 0}
                   <div class="mt-4">
-                    <h3>Additions</h3>
+                    <h3>附加效果</h3>
                     <ul class="list-disc pl-8">
                       {#each result.AlternatePassiveAdditionInformations as info}
                         <li class="mt-4">
@@ -143,7 +143,7 @@
                             <ol class="list-decimal pl-8">
                               {#each Object.keys(info.StatRolls) as roll, i}
                                 {@const stat = data.GetStatByIndex(info.AlternatePassiveAddition.StatsKeys[i])}
-                                <li>{stat.Text || '<no name>'} ({stat.ID}) - {info.StatRolls[roll]}</li>
+                                <li>{stat.Text || '<未命名>'} ({stat.ID}) - {info.StatRolls[roll]}</li>
                               {/each}
                             </ol>
                           {/if}
@@ -168,7 +168,7 @@
       </div>
 
       <div class="text-orange-500">
-        <a href="https://github.com/EeroLai/timeless-jewels-zh-tw" target="_blank" rel="noopener">Source (Github)</a>
+        <a href="https://github.com/EeroLai/timeless-jewels-zh-tw" target="_blank" rel="noopener">原始碼（GitHub）</a>
       </div>
     </div>
   </div>

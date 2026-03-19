@@ -423,7 +423,7 @@
         });
       } else if (hoveredNode.isJewelSocket) {
         allLines.push({
-          text: 'Click to select this socket',
+          text: '點擊以選取這個珠寶插槽',
           offset,
           special: true
         });

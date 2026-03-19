@@ -360,19 +360,19 @@
 
   const sortResults = [
     {
-      label: 'Count',
+      label: '數量',
       value: 'count'
     },
     {
-      label: 'Alphabetical',
+      label: '字母順序',
       value: 'alphabet'
     },
     {
-      label: 'Rarity',
+      label: '稀有度',
       value: 'rarity'
     },
     {
-      label: 'Value',
+      label: '價值',
       value: 'value'
     }
   ] as const;
@@ -435,13 +435,13 @@
   const platforms = [
   {
     value: 'PC',
-    label: 'PC'
+    label: '電腦'
   }, {
     value: 'Xbox',
     label: 'Xbox'
   }, {
     value: 'Playstation',
-    label: 'Playstation'
+    label: 'PlayStation'
   }
   ];
 
@@ -489,9 +489,9 @@
 
             <h3 class="flex-grow">
               {#if results}
-                <span>Results</span>
+                <span>結果</span>
               {:else}
-                <span>Timeless Jewel</span>
+                <span>永恆珠寶</span>
               {/if}
             </h3>
           </div>
@@ -504,18 +504,18 @@
                   class="p-1 px-3 bg-blue-500/40 rounded disabled:bg-blue-900/40"
                   on:click={() => openTrade(searchJewel, searchConqueror, searchResults.raw, platform.value, league.value)}
                   disabled={!searchResults}>
-                  Trade
+                  交易
                 </button>
                 <button
                   class="p-1 px-3 bg-blue-500/40 rounded disabled:bg-blue-900/40"
                   class:grouped={groupResults}
                   on:click={() => (groupResults = !groupResults)}
                   disabled={!searchResults}>
-                  Grouped
+                  分組
                 </button>
               {/if}
               <button class="bg-neutral-100/20 px-4 p-1 rounded" on:click={() => (results = !results)}>
-                {results ? 'Config' : 'Results'}
+                {results ? '設定' : '結果'}
               </button>
             </div>
           {/if}
@@ -526,23 +526,23 @@
 
           {#if selectedJewel}
             <div class="mt-4">
-              <h3 class="mb-2">Conqueror</h3>
+              <h3 class="mb-2">征服者</h3>
               <Select items={conquerors} bind:value={selectedConqueror} on:change={updateUrl} />
             </div>
 
             {#if selectedConqueror && Object.keys(data.TimelessJewelConquerors[selectedJewel.value]).indexOf(selectedConqueror.value) >= 0}
               <div class="mt-4 w-full flex flex-row">
                 <button class="selection-button" class:selected={mode === 'seed'} on:click={() => setMode('seed')}>
-                  Enter Seed
+                  輸入種子
                 </button>
                 <button class="selection-button" class:selected={mode === 'stats'} on:click={() => setMode('stats')}>
-                  Select Stats
+                  選擇詞綴
                 </button>
               </div>
 
               {#if mode === 'seed'}
                 <div class="mt-4">
-                  <h3 class="mb-2">Seed</h3>
+                  <h3 class="mb-2">種子</h3>
                   <input
                     type="number"
                     bind:value={seed}
@@ -551,8 +551,8 @@
                     max={data.TimelessJewelSeedRanges[selectedJewel.value].Max} />
                   {#if seed < data.TimelessJewelSeedRanges[selectedJewel.value].Min || seed > data.TimelessJewelSeedRanges[selectedJewel.value].Max}
                     <div class="mt-2">
-                      Seed must be between {data.TimelessJewelSeedRanges[selectedJewel.value].Min}
-                      and {data.TimelessJewelSeedRanges[selectedJewel.value].Max}
+                      種子值必須介於 {data.TimelessJewelSeedRanges[selectedJewel.value].Min}
+                      和 {data.TimelessJewelSeedRanges[selectedJewel.value].Max}
                     </div>
                   {/if}
                 </div>
@@ -560,7 +560,7 @@
                 {#if seed >= data.TimelessJewelSeedRanges[selectedJewel.value].Min && seed <= data.TimelessJewelSeedRanges[selectedJewel.value].Max}
                   <div class="flex flex-row mt-4 items-end">
                     <div class="flex-grow">
-                      <h3 class="mb-2">Sort Order</h3>
+                      <h3 class="mb-2">排序方式</h3>
                       <Select items={sortResults} bind:value={sortOrder} />
                     </div>
                     <div class="ml-2">
@@ -568,7 +568,7 @@
                         class="bg-neutral-500/20 p-2 px-4 rounded"
                         class:selected={colored}
                         on:click={() => (colored = !colored)}>
-                        Colors
+                        彩色
                       </button>
                     </div>
                     <div class="ml-2">
@@ -576,7 +576,7 @@
                         class="bg-neutral-500/20 p-2 px-4 rounded"
                         class:selected={split}
                         on:click={() => (split = !split)}>
-                        Split
+                        分開顯示
                       </button>
                     </div>
                   </div>
@@ -593,7 +593,7 @@
                     </ul>
                   {:else}
                     <div class="overflow-auto mt-4">
-                      <h3>Notables</h3>
+                      <h3>關鍵天賦</h3>
                       <ul class="mt-1" class:rainbow={colored}>
                         {#each sortCombined(combineResults(seedResults, colored, 'notables'), sortOrder.value) as r}
                           <li class="cursor-pointer" on:click={() => highlight(seed, r.passives)}>
@@ -604,7 +604,7 @@
                         {/each}
                       </ul>
 
-                      <h3 class="mt-2">Smalls</h3>
+                      <h3 class="mt-2">一般天賦</h3>
                       <ul class="mt-1" class:rainbow={colored}>
                         {#each sortCombined(combineResults(seedResults, colored, 'passives'), sortOrder.value) as r}
                           <li class="cursor-pointer" on:click={() => highlight(seed, r.passives)}>
@@ -619,7 +619,7 @@
                 {/if}
               {:else if mode === 'stats'}
                 <div class="mt-4">
-                  <h3 class="mb-2">Add Stat</h3>
+                  <h3 class="mb-2">新增詞綴</h3>
                   <Select items={statItems} on:change={selectStat} bind:this={statSelector} />
                 </div>
                 {#if Object.keys(selectedStats).length > 0}
@@ -636,11 +636,11 @@
                         </div>
                         <div class="mt-2 flex flex-row">
                           <div class="mr-4 flex flex-row items-center">
-                            <div class="mr-2">Min:</div>
+                            <div class="mr-2">最少：</div>
                             <input type="number" min="0" bind:value={selectedStats[s].min} />
                           </div>
                           <div class="flex flex-row items-center">
-                            <div class="mr-2">Weight:</div>
+                            <div class="mr-2">權重：</div>
                             <input type="number" min="0" bind:value={selectedStats[s].weight} />
                           </div>
                         </div>
@@ -649,7 +649,7 @@
                   </div>
                   <div class="flex flex-col mt-2">
                     <div class="flex flex-row items-center">
-                      <div class="mr-2 min-w-fit">Min Total Weight:</div>
+                      <div class="mr-2 min-w-fit">最低總權重：</div>
                       <input type="number" min="0" bind:value={minTotalWeight} />
                     </div>
                   </div>
@@ -659,25 +659,25 @@
                         class="p-2 px-2 bg-yellow-500/40 rounded disabled:bg-yellow-900/40 mr-2"
                         on:click={selectAll}
                         disabled={searching || disabled.size == 0}>
-                        Select All
+                        全選
                       </button>
                       <button
                         class="p-2 px-2 bg-yellow-500/40 rounded disabled:bg-yellow-900/40 mr-2"
                         on:click={selectAllNotables}
                         disabled={searching || disabled.size == 0}>
-                        Notables
+                        關鍵天賦
                       </button>
                       <button
                         class="p-2 px-2 bg-yellow-500/40 rounded disabled:bg-yellow-900/40 mr-2"
                         on:click={selectAllPassives}
                         disabled={searching || disabled.size == 0}>
-                        Passives
+                        一般天賦
                       </button>
                       <button
                         class="p-2 px-2 bg-yellow-500/40 rounded disabled:bg-yellow-900/40 flex-grow"
                         on:click={deselectAll}
                         disabled={searching || disabled.size >= affectedNodes.length}>
-                        Deselect
+                        全不選
                       </button>
                     </div>
                     <div class="flex flex-row mt-2">
@@ -688,7 +688,7 @@
                         {#if searching}
                           {currentSeed} / {data.TimelessJewelSeedRanges[selectedJewel.value].Max}
                         {:else}
-                          Search
+                          搜尋
                         {/if}
                       </button>
                     </div>
@@ -697,7 +697,7 @@
               {/if}
 
               {#if !circledNode}
-                <h2 class="mt-4">Click on a jewel socket</h2>
+                <h2 class="mt-4">請點選一個珠寶插槽</h2>
               {/if}
             {/if}
           {/if}
@@ -719,7 +719,7 @@
   {/if}
 
   <div class="text-orange-500 absolute bottom-0 right-0 m-2">
-    <a href="https://github.com/EeroLai/timeless-jewels-zh-tw" target="_blank" rel="noopener">Source (Github)</a>
+    <a href="https://github.com/EeroLai/timeless-jewels-zh-tw" target="_blank" rel="noopener">原始碼（GitHub）</a>
   </div>
 </SkillTree>
 
