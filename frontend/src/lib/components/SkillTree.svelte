@@ -7,12 +7,11 @@
     distance,
     drawnGroups,
     drawnNodes,
-    formatStats,
     inverseSprites,
     inverseSpritesActive,
-    inverseTranslations,
     orbitAngleAt,
     skillTree,
+    translateStatDisplay,
     toCanvasCoords
   } from '../skill_tree';
   import type { Point } from '../skill_tree';
@@ -350,14 +349,10 @@
 
               if ('StatsKeys' in result.AlternatePassiveSkill) {
                 result.AlternatePassiveSkill.StatsKeys.forEach((statId, i) => {
-                  const stat = data.GetStatByIndex(statId);
-                  const translation = inverseTranslations[stat.ID] || '';
-                  if (translation) {
-                    nodeStats.push({
-                      text: formatStats(translation, result.StatRolls[i]) || stat.ID,
-                      special: true
-                    });
-                  }
+                  nodeStats.push({
+                    text: translateStatDisplay(statId, result.StatRolls[i]),
+                    special: true
+                  });
                 });
               }
             }
@@ -366,14 +361,10 @@
               result.AlternatePassiveAdditionInformations.forEach((info) => {
                 if ('StatsKeys' in info.AlternatePassiveAddition) {
                   info.AlternatePassiveAddition.StatsKeys.forEach((statId, i) => {
-                    const stat = data.GetStatByIndex(statId);
-                    const translation = inverseTranslations[stat.ID] || '';
-                    if (translation) {
-                      nodeStats.push({
-                        text: formatStats(translation, info.StatRolls[i]) || stat.ID,
-                        special: true
-                      });
-                    }
+                    nodeStats.push({
+                      text: translateStatDisplay(statId, info.StatRolls[i]),
+                      special: true
+                    });
                   });
                 }
               });

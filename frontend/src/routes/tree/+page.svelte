@@ -4,11 +4,12 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import type { Node } from '../../lib/skill_tree_types';
-  import { getAffectedNodes, skillTree, translateStat, openTrade } from '../../lib/skill_tree';
+  import { getAffectedNodes, skillTree, translateStat, translateStatRaw, openTrade } from '../../lib/skill_tree';
   import { syncWrap } from '../../lib/worker';
   import { proxy } from 'comlink';
   import type { ReverseSearchConfig, StatConfig } from '../../lib/skill_tree';
   import SearchResults from '../../lib/components/SearchResults.svelte';
+  import { translateTimelessConquerorName, translateTimelessJewelName } from '../../lib/timeless_names';
   import { statValues } from '../../lib/values';
   import { data, calculator } from '../../lib/types';
   import { onMount } from 'svelte';
@@ -17,7 +18,8 @@
 
   const jewels = Object.keys(data.TimelessJewels).map((k) => ({
     value: parseInt(k),
-    label: data.TimelessJewels[k]
+    label: translateTimelessJewelName(data.TimelessJewels[k]),
+    rawLabel: data.TimelessJewels[k]
   }));
 
   let selectedJewel = searchParams.has('jewel') ? jewels.find((j) => j.value == searchParams.get('jewel')) : undefined;
@@ -25,14 +27,14 @@
   $: conquerors = selectedJewel
     ? Object.keys(data.TimelessJewelConquerors[selectedJewel.value]).map((k) => ({
         value: k,
-        label: k
+        label: translateTimelessConquerorName(k)
       }))
     : [];
 
   let selectedConqueror = searchParams.has('conqueror')
     ? {
         value: searchParams.get('conqueror'),
-        label: searchParams.get('conqueror')
+        label: translateTimelessConquerorName(searchParams.get('conqueror'))
       }
     : undefined;
 
@@ -252,24 +254,26 @@
   };
 
   export const colorKeys = {
-    physical: '#c79d93',
-    cast: '#b3f8fe',
-    fire: '#ff9a77',
-    cold: '#93d8ff',
-    lightning: '#f8cb76',
-    attack: '#da814d',
-    life: '#c96e6e',
-    chaos: '#d8a7d3',
-    unique: '#af6025',
-    critical: '#b2a7d6'
+    physical: { color: '#c79d93', tokens: ['physical', '物理'] },
+    cast: { color: '#b3f8fe', tokens: ['cast', '施放'] },
+    fire: { color: '#ff9a77', tokens: ['fire', '火焰'] },
+    cold: { color: '#93d8ff', tokens: ['cold', '冰冷'] },
+    lightning: { color: '#f8cb76', tokens: ['lightning', '閃電'] },
+    attack: { color: '#da814d', tokens: ['attack', '攻擊'] },
+    life: { color: '#c96e6e', tokens: ['life', '生命'] },
+    chaos: { color: '#d8a7d3', tokens: ['chaos', '混沌'] },
+    unique: { color: '#af6025', tokens: ['unique', '獨特'] },
+    critical: { color: '#b2a7d6', tokens: ['critical', '暴擊'] }
   };
+
+  const escapeRegex = (value: string): string => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
   const colorMessage = (message: string): string => {
     Object.keys(colorKeys).forEach((key) => {
-      const value = colorKeys[key];
+      const { color, tokens } = colorKeys[key];
       message = message.replace(
-        new RegExp(`(${key}(?:$|\\s))|((?:^|\\s)${key})`, 'gi'),
-        `<span style='color: ${value}; font-weight: bold'>$1$2</span>`
+        new RegExp(`(${tokens.map(escapeRegex).join('|')})`, 'gi'),
+        `<span style='color: ${color}; font-weight: bold'>$1</span>`
       );
     });
 
@@ -315,10 +319,12 @@
     });
 
     return Object.keys(mappedStats).map((statID) => {
-      const translated = translateStat(parseInt(statID));
+      const id = parseInt(statID);
+      const rawStat = translateStatRaw(id);
+      const translated = translateStat(id);
       return {
         stat: withColors ? colorMessage(translated) : translated,
-        rawStat: translated,
+        rawStat,
         id: statID,
         passives: mappedStats[statID]
       };
@@ -398,7 +404,7 @@
       return;
     }
 
-    const jewel = jewels.find((j) => j.label === lines[2]);
+    const jewel = jewels.find((j) => j.rawLabel === lines[2] || j.label === lines[2]);
     if (!jewel) {
       return;
     }
@@ -426,7 +432,7 @@
     mode = 'seed';
     seed = newSeed;
     selectedJewel = jewel;
-    selectedConqueror = { label: conqueror, value: conqueror };
+    selectedConqueror = { label: translateTimelessConquerorName(conqueror), value: conqueror };
     updateUrl();
   };
 

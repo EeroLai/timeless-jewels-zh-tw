@@ -4,13 +4,15 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
   import { base, assets } from '$app/paths';
+  import { translateStatDisplay } from '../lib/skill_tree';
+  import { translateTimelessConquerorName, translateTimelessJewelName } from '../lib/timeless_names';
   import { calculator, data } from '../lib/types';
 
   const searchParams = $page.url.searchParams;
 
   const jewels = Object.keys(data.TimelessJewels).map((k) => ({
     value: parseInt(k),
-    label: data.TimelessJewels[k]
+    label: translateTimelessJewelName(data.TimelessJewels[k])
   }));
 
   let selectedJewel = searchParams.has('jewel') ? jewels.find((j) => j.value == searchParams.get('jewel')) : undefined;
@@ -18,14 +20,14 @@
   $: conquerors = selectedJewel
     ? Object.keys(data.TimelessJewelConquerors[selectedJewel.value]).map((k) => ({
         value: k,
-        label: k
+        label: translateTimelessConquerorName(k)
       }))
     : [];
 
   let selectedConqueror = searchParams.has('conqueror')
     ? {
         value: searchParams.get('conqueror'),
-        label: searchParams.get('conqueror')
+        label: translateTimelessConquerorName(searchParams.get('conqueror'))
       }
     : undefined;
 
@@ -125,7 +127,7 @@
                     <ol class="mt-4 list-decimal pl-8">
                       {#each Object.keys(result.StatRolls) as roll, i}
                         {@const stat = data.GetStatByIndex(result.AlternatePassiveSkill.StatsKeys[i])}
-                        <li>{stat.Text || '<未命名>'} ({stat.ID}) - {result.StatRolls[roll]}</li>
+                        <li>{translateStatDisplay(stat.Index, result.StatRolls[roll])} ({stat.ID})</li>
                       {/each}
                     </ol>
                   {/if}
@@ -143,7 +145,7 @@
                             <ol class="list-decimal pl-8">
                               {#each Object.keys(info.StatRolls) as roll, i}
                                 {@const stat = data.GetStatByIndex(info.AlternatePassiveAddition.StatsKeys[i])}
-                                <li>{stat.Text || '<未命名>'} ({stat.ID}) - {info.StatRolls[roll]}</li>
+                                <li>{translateStatDisplay(stat.Index, info.StatRolls[roll])} ({stat.ID})</li>
                               {/each}
                             </ol>
                           {/if}

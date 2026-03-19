@@ -1,5 +1,6 @@
 import type { Translation, Node, SkillTreeData, Group, Sprite, TranslationFile } from './skill_tree_types';
 import { data } from './types';
+import { translateStatDisplayText } from './stat_translations';
 
 export let skillTree: SkillTreeData;
 
@@ -336,10 +337,10 @@ export interface SearchResults {
   raw: SearchWithSeed[];
 }
 
-export const translateStat = (id: number, roll?: number | undefined): string => {
+export const translateStatRaw = (id: number, roll?: number | undefined): string => {
   const stat = getStat(id);
   const translation = inverseTranslations[stat.ID];
-  if (roll) {
+  if (roll !== undefined) {
     return formatStats(translation, roll) || stat.ID;
   }
 
@@ -350,6 +351,14 @@ export const translateStat = (id: number, roll?: number | undefined): string => 
   }
   return translationText;
 };
+
+export const translateStatDisplay = (id: number | string, roll?: number | undefined): string => {
+  const stat = getStat(id);
+  const rawText = translateStatRaw(stat.Index, roll);
+  return translateStatDisplayText(stat.Index, rawText, roll);
+};
+
+export const translateStat = translateStatDisplay;
 
 const tradeStatNames: { [key: number]: { [key: string]: string } } = {
   1: {
