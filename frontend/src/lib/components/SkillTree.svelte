@@ -17,6 +17,7 @@
   import type { Point } from '../skill_tree';
   import { derived } from 'svelte/store';
   import { calculator, data } from '../types';
+  import { translateSkillTreeNodeName, translateSkillTreeStatText } from '../skill_tree_display';
 
   export let clickNode: (node: Node) => void;
   export let circledNode: number | undefined;
@@ -327,9 +328,9 @@
     }
 
     if (hoveredNode) {
-      let nodeName = hoveredNode.name;
+      let nodeName = translateSkillTreeNodeName(hoveredNode.name);
       let nodeStats: { text: string; special: boolean }[] = (hoveredNode.stats || []).map((s) => ({
-        text: s,
+        text: translateSkillTreeStatText(s),
         special: false
       }));
 
@@ -345,7 +346,7 @@
           if (result) {
             if ('AlternatePassiveSkill' in result && result.AlternatePassiveSkill) {
               nodeStats = [];
-              nodeName = result.AlternatePassiveSkill.Name;
+              nodeName = translateSkillTreeNodeName(result.AlternatePassiveSkill.Name) || result.AlternatePassiveSkill.Name;
 
               if ('StatsKeys' in result.AlternatePassiveSkill) {
                 result.AlternatePassiveSkill.StatsKeys.forEach((statId, i) => {

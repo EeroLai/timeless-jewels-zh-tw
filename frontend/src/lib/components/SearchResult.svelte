@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SearchWithSeed } from '../skill_tree';
   import { skillTree, translateStat, openTrade } from '../skill_tree';
+  import { translateSkillTreeNodeName } from '../skill_tree_display';
 
   export let highlight: (newSeed: number, passives: number[]) => void;
   export let set: SearchWithSeed;
@@ -28,7 +29,7 @@
   {#each set.skills as skill}
     <div class="mt-2">
       <span>
-        {skillTree.nodes[skill.passive].name} ({skill.passive})
+        {translateSkillTreeNodeName(skillTree.nodes[skill.passive].name)} ({skill.passive})
       </span>
       <ul class="list-disc pl-6 font-bold">
         {#each Object.keys(skill.stats) as stat}
