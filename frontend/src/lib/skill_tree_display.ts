@@ -48,6 +48,144 @@ const nodeNameTranslations: Record<string, string> = {
   'Hierophant': '聖宗',
   'Inquisitor': '判官',
   'Elementalist': '元素使',
+  'Berserker': '暴徒',
+  'Chieftain': '酋長',
+  'Champion': '冠軍',
+  'Assassin': '刺客',
+  'Ward': '保護',
+  'Sanctuary': '聖所',
+  'Crave the Slaughter': '屠戮之慾',
+  'Aspect of Carnage': '血肉之章',
+  'War Bringer': '戰爭使者',
+  'Rite of Ruin': '毀滅儀式',
+  'Defy Pain': '抵禦苦痛',
+  'Aul Bloodline': '奧爾血裔',
+  'Catarina Bloodline': '卡塔莉娜血裔',
+  'Farrul Bloodline': '費爾羅血裔',
+  'Farric Will': '費爾羅之志',
+  'Fertile Will': '豐富之志',
+  'Wild Will': '狂野之志',
+  'Huntleader': '狩獵領袖',
+  'The King\'s Contempt': '王之蔑視',
+  'The King\'s Heritage': '王之傳承',
+  'The King\'s Might': '王之威能',
+  'Legacy of the King': '王之遺產',
+  'Ancestral Fury': '先祖之怒',
+  'Death Offering': '死亡奉獻',
+  'Untiring': '不懈',
+  'Unstoppable': '勢不可擋',
+  'Unbreakable': '堅不可破',
+  'Undeniable': '不可置疑',
+  'Unflinching': '永不動搖',
+  'Unrelenting': '殺無赦',
+  'Unyielding': '屹立不搖',
+  'Harmony of Purpose': '和諧之源',
+  'Unwavering Faith': '不動信念',
+  'Radiant Crusade': '光輝遠征',
+  'Unwavering Crusade': '堅定聖戰',
+  'Time of Need': '緊急時刻',
+  'Radiant Faith': '信念之輝',
+  'Bastion of Hope': '希望壁壘',
+  'Sanctuary of Thought': '意識聖殿',
+  'Ritual of Awakening': '昇華儀式',
+  'Conviction of Power': '力量定罪',
+  'Illuminated Devotion': '無上奉獻',
+  'Arcane Blessing': '秘能庇護',
+  'Sign of Purpose': '標記之印',
+  'Divine Guidance': '神聖指引',
+  'Pursuit of Faith': '信念之訴',
+  'Pious Path': '廉簡之途',
+  'Instruments of Zeal': '狂熱儀',
+  'Instruments of Virtue': '美德儀',
+  'Righteous Providence': '正義之庭',
+  'Inevitable Judgement': '命運審判',
+  'Augury of Penitence': '懺悔之卜',
+  'Tasalio, Cleansing Water': '淨化之水．塔薩里奧',
+  'Sanguimancy': '占血術',
+  'Cannibalised Faith': '食人族信仰',
+  'Crimson Power': '緋紅之力',
+  'Corruption\'s Embrace': '腐化之擁',
+  'Lycia Bloodline': '利希亞血裔',
+  'Bitter Heresy': '苦澀異端',
+  'Sinner Saint': '罪人聖徒',
+  'Farewell to Flesh': '告別血肉',
+  'Blood Hunt': '鮮血獵捕',
+  'Warlock of the Mists': '嵐之術士',
+  'Soul Splitting': '靈魂撕裂',
+  'Creeping Lobotomy': '前額葉切除術',
+  'Black Mass': '黑暗彌撒',
+  'Foul Pact': '邪惡契約',
+  'Choir of the Damned': '惡魔樂團',
+  'Oshabi Bloodline': '奧莎比血裔',
+  'The Primal Owl': '原始貓頭鷹',
+  'The Wild Bear': '荒野之熊',
+  'The Vivid Cat': '鮮活之貓',
+  'Elusive effect': '朦朧效應',
+  'Seal gain frequency': '封印獲取頻率',
+  'Umbral Army': '幽影軍團',
+  'Prolonged Servitude': '無期奴役',
+  'Nameless Bloodline': '無名血裔',
+  'The Unseen Hand': '未見之手',
+  'Toad\'s Price': '蟾蜍的代價',
+  'Serpent\'s Price': '腹蛇的代價',
+  'Beetle\'s Price': '甲蟲的代價',
+  'Unlight Silhouette': '無光輪廓',
+  'Olroth Bloodline': '奧爾羅斯血裔',
+  'Enhanced Starlight': '增幅星光',
+  'Volatile Runes': '易爆符文',
+  'Boon of the River': '河之祝福',
+  'Boon of the Mountain': '山之祝福',
+  'Boon of the Sun': '日之祝福',
+  'Wildwood Primalist': '荒野始者',
+  'Warden of the Maji': '聖賢守護者',
+  'Wildwood Blessing': '荒林祝福',
+  'Oath of the Maji': '聖賢之誓',
+  'Ascendant': '昇華使徒',
+  'Templar Ascendancy': '聖騎士昇華職業',
+  'Marauder Ascendancy': '野蠻人昇華職業',
+  'Witch Ascendancy': '女巫昇華職業',
+  'Duelist Ascendancy': '決鬥者昇華職業',
+  'Ranger Ascendancy': '遊俠昇華職業',
+  'Shadow Ascendancy': '暗影刺客昇華職業',
+  'Path of the Templar': '聖騎士之道',
+  'Path of the Marauder': '野蠻人之道',
+  'Path of the Duelist': '決鬥者之道',
+  'Path of the Witch': '女巫之道',
+  'Path of the Shadow': '暗影刺客之道',
+  'Path of the Ranger': '遊俠之道',
+  'Burning Damage Multiplier with Attacks': '攻擊的燃燒傷害加成',
+  'Brand Range and Brand Recall Cooldown Recovery': '烙印範圍和烙印呼喚冷卻恢復率',
+  'Increased Energy Shield Leeched': '增加能量護盾偷取',
+  'Damage if Consumed a Corpse': '消耗屍體後的傷害',
+  'Bleed and Critical Strike Chance': '流血機率和暴擊率',
+  'Aggravate Bleeding On Critical Strike Chance': '暴擊時惡化流血機率',
+  'Physical Damage, Life Leeched per Second': '物理傷害、每秒生命偷取',
+  'Armour and Energy Shield, Shrine Buff Effect': '護甲和能量護盾、神龕增益效果',
+  'Chaos Bloodline': '混沌血裔',
+  'Vaal Souls': '瓦爾靈魂',
+  'Gore Dancer': '血腥舞者',
+  'Farrul\'s Will': '費爾羅之志',
+  'Tukohama, War\'s Herald': 'Tukohama, War\'s Herald',
+  'Ramako, Sun\'s Light': 'Ramako, Sun\'s Light',
+  'Valako, Storm\'s Embrace': 'Valako, Storm\'s Embrace',
+  'Sione, Sun\'s Roar': 'Sione, Sun\'s Roar',
+  'Ngamahu, Flame\'s Advance': 'Ngamahu, Flame\'s Advance',
+  'Hinekora, Death\'s Fury': 'Hinekora, Death\'s Fury',
+  'Divine Shield': '聖盾',
+  'Resolute Technique': '堅毅之心',
+  'Spiritual Aid': '精神救助',
+  'Divine Judgement': '聖之審判',
+  'Divine Wrath': '聖之雷霆',
+  'Blade Master': '刀劍宗師',
+  'Crusader': '十字軍',
+  'Tenacity': '不屈不撓',
+  'Persistence': '堅持不懈',
+  'Righteous Army': '正義軍團',
+  'Redemption': '救贖',
+  'Smashing Strikes': '沉重之擊',
+  'Cleaving': '劈砍',
+  'Slaughter': '屠殺',
+  'Charm Socket': '咒符插槽',
   'Attack Mana Cost': '攻擊魔力消耗',
   'Attack and Cast Speed': '攻擊和施放速度',
   'Armour and Energy Shield': '護甲和能量護盾',
@@ -56,8 +194,11 @@ const nodeNameTranslations: Record<string, string> = {
   'Life and Energy Shield': '生命和能量護盾',
   'Evasion and Energy Shield': '閃避和能量護盾',
   'Elemental Damage and Resistances': '元素傷害和抗性',
+  'Elemental Damage, Attack and Cast Speed': '元素傷害、攻擊與施放速度',
   'Minion Damage and Life': '召喚物傷害和生命',
   'Mana and Mana Regeneration': '魔力和魔力回復',
+  'Mana Regeneration, Totem Placement Speed': '魔力回復速度、圖騰放置速度',
+  'Mana Regeneration, Arcane Surge Effect': '魔力回復速度、秘能波動效果',
   'Position Proxy': '位置代理',
   'Passive Point': '天賦點',
   'Basic Jewel Socket': '基礎珠寶插槽',
@@ -97,6 +238,7 @@ const nodeNameTranslations: Record<string, string> = {
   'Banner Mastery': '鬥旗專精',
   'Mine Mastery': '地雷專精',
   'Flask Mastery': '藥劑專精',
+  'Fortify Mastery': '護體專精',
   'Reservation Mastery': '保留專精',
   'Armour Mastery': '護甲專精',
   'Evasion Mastery': '閃避專精',
@@ -145,7 +287,7 @@ const nodeNameTranslations: Record<string, string> = {
   'Power Charge Duration': '暴擊球持續時間',
   'Maximum Fortification': '最大護體',
   'Mana and Reduced Mana Cost': '魔力和減少魔力消耗',
-  'Mana Regeneration, Mana': '魔力回復和魔力',
+  'Mana Regeneration, Mana': '魔力回復速度、魔力',
   'Mana Regeneration and Life': '魔力回復和生命',
   'Life Gain on Hit': '擊中獲得生命',
   'Life Leech Speed': '生命偷取速度',
@@ -163,6 +305,7 @@ const nodeNameTranslations: Record<string, string> = {
   'Flask Effect and Charges Gained': '藥劑效果和充能獲得量',
   'Attack Speed, Block Chance': '攻擊速度、格擋率',
   'Reservation Efficiency of Heralds': '捷的保留效用',
+  'Projectile Damage and Accuracy': '投射物傷害、命中率',
   'Spell Area of Effect': '法術範圍效果',
   'Spell Damage Over Time Multiplier': '法術持續傷害加成',
   'Spell Damage Over Time': '法術持續傷害',
@@ -174,6 +317,7 @@ const nodeNameTranslations: Record<string, string> = {
   'Evasion and Blind Effect': '閃避和致盲效果',
   'Dual Wield Spell Damage and Movement Speed': '雙持法術傷害和移動速度',
   'Damage Over Time': '持續傷害',
+  'Evil Eye': '邪眼',
   'Armour and Elemental Resistances': '護甲和元素抗性',
   'Armour and Life': '護甲和生命',
   'Armour and Life Regeneration': '護甲和生命回復',
@@ -306,9 +450,11 @@ const termTranslations: Array<[string, string]> = [
   ['Intelligence', '智慧']
 ];
 
+const sortedTermTranslations = [...termTranslations].sort((a, b) => b[0].length - a[0].length);
+
 const replaceTerms = (text: string): string => {
   let output = text;
-  termTranslations.forEach(([source, target]) => {
+  sortedTermTranslations.forEach(([source, target]) => {
     output = output.replaceAll(source, target);
   });
   return output;
@@ -377,11 +523,26 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Damage Over Time Mastery', '持續傷害專精'],
   ['Reservation Efficiency', '保留效用'],
   ['Reservation Efficiency of Heralds', '捷的保留效用'],
+  ['Retaliation Skill', '復仇技能'],
+  ['Guard Skill', '防衛技能'],
+  ['Movement Skill', '位移技能'],
+  ['Brand Recall', '烙印呼喚'],
+  ['with Shield', '持盾時'],
+  ['while Fortified', '護體時'],
+  ['Aura Effect', '光環效果'],
+  ['Aura Area of Effect', '光環範圍效果'],
+  ['Cooldown Recovery Rate', '冷卻恢復率'],
+  ['Mana Regeneration', '魔力回復'],
+  ['Life Leeched per Second', '每秒生命偷取'],
+  ['Reduced Enemy Stun Threshold', '降低敵人暈眩門檻'],
   ['Life Regeneration', '生命回復'],
   ['Energy Shield', '能量護盾'],
+  ['Energy Shield Recharge Rate', '能量護盾充能率'],
+  ['Physical Damage Reduction', '物理傷害減免'],
   ['Spell Suppression', '法術壓抑'],
   ['Area of Effect', '範圍效果'],
   ['Area Of Effect', '範圍效果'],
+  ['Area Damage', '範圍傷害'],
   ['Attack Damage', '攻擊傷害'],
   ['Attack Speed', '攻擊速度'],
   ['Cast Speed', '施放速度'],
@@ -403,14 +564,17 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Life Flask Recovery', '生命藥劑回復'],
   ['Energy Shield Leech', '能量護盾偷取'],
   ['Elemental Resistances', '元素抗性'],
+  ['Chaos Resistance', '混沌抗性'],
   ['Elemental Ailment Avoidance', '元素異常狀態避免'],
   ['Elemental Ailment Duration', '元素異常狀態持續時間'],
+  ['Status Ailment Chance', '異常狀態機率'],
   ['Fire Resistance', '火焰抗性'],
   ['Cold Resistance', '冰冷抗性'],
   ['Lightning Resistance', '閃電抗性'],
   ['Cold Damage Over Time Multiplier', '冰冷持續傷害加成'],
   ['Physical Damage Over Time Multiplier', '物理持續傷害加成'],
   ['Poison Damage Multiplier', '中毒傷害加成'],
+  ['Bleed Damage Multiplier', '流血傷害加成'],
   ['Physical Damage', '物理傷害'],
   ['Elemental Damage', '元素傷害'],
   ['Chaos Damage', '混沌傷害'],
@@ -434,6 +598,52 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Shock Chance', '感電機率'],
   ['Impale Chance', '穿刺機率'],
   ['Impale Effect', '穿刺效果'],
+  ['Onslaught Effect', '猛攻效果'],
+  ['Fortify on Melee Stun', '近戰暈眩時獲得護體'],
+  ['Avoid Interruption while Casting', '施放時避免被中斷'],
+  ['Chance to Poison with Spells', '法術中毒機率'],
+  ['Withered Expiry Rate', '凋零消逝速度'],
+  ['Fortification Gain', '護體獲得量'],
+  ['Flask Charges against Marked Enemy', '對印記敵人的藥劑充能'],
+  ['Damage against Marked Enemy', '對印記敵人的傷害'],
+  ['Banner Maximum Valour', '鬥旗最大英勇值'],
+  ['Banner Area of Effect', '鬥旗範圍效果'],
+  ['Banner Aura Effect', '鬥旗光環效果'],
+  ['Link Mana Cost', '連結魔力消耗'],
+  ['Poison Chance', '中毒機率'],
+  ['Bleed Chance', '流血機率'],
+  ['Bleed Duration', '流血持續時間'],
+  ['Bleeding', '流血'],
+  ['Faster Bleeding', '流血加速'],
+  ['Faster Ailments', '異常狀態加速'],
+  ['Exerted', '竭盡'],
+  ['Onslaught', '猛攻'],
+  ['Blind', '致盲'],
+  ['Ignite', '點燃'],
+  ['Movement', '移動'],
+  ['Flasks', '藥劑'],
+  ['Offering', '奉獻'],
+  ['Spectres', '幽魂'],
+  ['Recovery Rate', '恢復率'],
+  ['Recovery rate', '恢復率'],
+  ['per Second', '每秒'],
+  ['Forking Angle', '分叉角度'],
+  ['Corpse', '屍體'],
+  ['Shrine', '神龕'],
+  ['Golem', '魔像'],
+  ['Curse', '詛咒'],
+  ['Aura', '光環'],
+  ['Skill', '技能'],
+  ['Speed', '速度'],
+  ['Cooldown', '冷卻'],
+  ['Reduced', '減少'],
+  ['Increased', '增加'],
+  ['Leech', '偷取'],
+  ['Recoup', '補償'],
+  ['Recharge Rate', '充能率'],
+  ['Gain', '獲得量'],
+  ['Chance', '機率'],
+  ['Overwhelm', '壓倒'],
   ['Valour', '英勇值'],
   ['Fortification', '護體'],
   ['Arcane Surge Effect', '秘能波動效果'],
@@ -458,6 +668,7 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Mine', '地雷'],
   ['Heralds', '捷'],
   ['Herald', '捷'],
+  ['Charm', '咒符'],
   ['Minion', '召喚物'],
   ['Axe', '斧'],
   ['Bow', '弓'],
@@ -503,6 +714,13 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Energy Shield on Kill', '擊殺時獲得能量護盾'],
   ['Rage on Hit', '擊中獲得盛怒'],
   ['Buff Effect', '增益效果'],
+  ['Mirage Archer', '幻影射手'],
+  ['Ignore', '無視'],
+  ['Phasing', '迷蹤'],
+  ['Consumed a Corpse', '消耗屍體'],
+  ['against Marked Enemy', '對印記敵人'],
+  ['against Marked Enemies', '對印記敵人'],
+  ['Marked Enemy', '印記敵人'],
   ['Detonation Speed', '引爆速度'],
   ['Trigger Area', '觸發範圍'],
   ['Throwing Speed', '投擲速度'],
@@ -532,19 +750,23 @@ const genericNodeTermTranslations: Array<[string, string]> = [
   ['Wisps', '微光']
 ];
 
+const sortedGenericNodeTermTranslations = [...genericNodeTermTranslations].sort((a, b) => b[0].length - a[0].length);
+
 const genericNodeConnectorTranslations: Array<[string, string]> = [
   [' and ', '和'],
   [', ', '、']
 ];
 
+const sortedGenericNodeConnectorTranslations = [...genericNodeConnectorTranslations].sort((a, b) => b[0].length - a[0].length);
+
 const tryTranslateGenericNodeName = (name: string): string | undefined => {
   let output = name;
 
-  genericNodeTermTranslations.forEach(([source, target]) => {
+  sortedGenericNodeTermTranslations.forEach(([source, target]) => {
     output = output.replaceAll(source, target);
   });
 
-  genericNodeConnectorTranslations.forEach(([source, target]) => {
+  sortedGenericNodeConnectorTranslations.forEach(([source, target]) => {
     output = output.replaceAll(source, target);
   });
 
@@ -556,21 +778,23 @@ export const translateSkillTreeNodeName = (name: string | undefined): string => 
     return '';
   }
 
-  if (nodeNameTranslations[name]) {
-    return nodeNameTranslations[name];
+  const normalizedName = name.trim();
+
+  if (nodeNameTranslations[normalizedName]) {
+    return nodeNameTranslations[normalizedName];
   }
 
-  if (name.endsWith(' Mastery')) {
-    const base = name.slice(0, -' Mastery'.length);
+  if (normalizedName.endsWith(' Mastery')) {
+    const base = normalizedName.slice(0, -' Mastery'.length);
     return `${translateSkillTreeNodeName(base)}專精`;
   }
 
-  const generic = tryTranslateGenericNodeName(name);
+  const generic = tryTranslateGenericNodeName(normalizedName);
   if (generic) {
     return generic;
   }
 
-  return name;
+  return normalizedName;
 };
 
 export const translateSkillTreeStatText = (text: string): string => {
