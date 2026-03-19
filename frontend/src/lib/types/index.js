@@ -4,23 +4,23 @@ export let data;
 
 export const initializeCrystalline = () => {
   calculator = {
-    Calculate: globalThis["go"]["timeless-jewels"]["calculator"]["Calculate"],
-    ReverseSearch: globalThis["go"]["timeless-jewels"]["calculator"]["ReverseSearch"],
+    Calculate: globalThis["go"]["timeless-jewels-zh-tw"]["calculator"]["Calculate"],
+    ReverseSearch: globalThis["go"]["timeless-jewels-zh-tw"]["calculator"]["ReverseSearch"],
   }
   data = {
-    GetAlternatePassiveAdditionByIndex: globalThis["go"]["timeless-jewels"]["data"]["GetAlternatePassiveAdditionByIndex"],
-    GetAlternatePassiveSkillByIndex: globalThis["go"]["timeless-jewels"]["data"]["GetAlternatePassiveSkillByIndex"],
-    GetPassiveSkillByIndex: globalThis["go"]["timeless-jewels"]["data"]["GetPassiveSkillByIndex"],
-    GetStatByIndex: globalThis["go"]["timeless-jewels"]["data"]["GetStatByIndex"],
-    PassiveSkillAuraStatTranslationsJSON: globalThis["go"]["timeless-jewels"]["data"]["PassiveSkillAuraStatTranslationsJSON"],
-    PassiveSkillStatTranslationsJSON: globalThis["go"]["timeless-jewels"]["data"]["PassiveSkillStatTranslationsJSON"],
-    PassiveSkills: globalThis["go"]["timeless-jewels"]["data"]["PassiveSkills"],
-    PossibleStats: globalThis["go"]["timeless-jewels"]["data"]["PossibleStats"],
-    SkillTree: globalThis["go"]["timeless-jewels"]["data"]["SkillTree"],
-    StatTranslationsJSON: globalThis["go"]["timeless-jewels"]["data"]["StatTranslationsJSON"],
-    TimelessJewelConquerors: globalThis["go"]["timeless-jewels"]["data"]["TimelessJewelConquerors"],
-    TimelessJewelSeedRanges: globalThis["go"]["timeless-jewels"]["data"]["TimelessJewelSeedRanges"],
-    TimelessJewels: globalThis["go"]["timeless-jewels"]["data"]["TimelessJewels"],
-    TreeToPassive: globalThis["go"]["timeless-jewels"]["data"]["TreeToPassive"],
+    GetAlternatePassiveAdditionByIndex: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["GetAlternatePassiveAdditionByIndex"],
+    GetAlternatePassiveSkillByIndex: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["GetAlternatePassiveSkillByIndex"],
+    GetPassiveSkillByIndex: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["GetPassiveSkillByIndex"],
+    GetStatByIndex: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["GetStatByIndex"],
+    PassiveSkillAuraStatTranslationsJSON: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["PassiveSkillAuraStatTranslationsJSON"],
+    PassiveSkillStatTranslationsJSON: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["PassiveSkillStatTranslationsJSON"],
+    PassiveSkills: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["PassiveSkills"],
+    PossibleStats: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["PossibleStats"],
+    SkillTree: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["SkillTree"],
+    StatTranslationsJSON: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["StatTranslationsJSON"],
+    TimelessJewelConquerors: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["TimelessJewelConquerors"],
+    TimelessJewelSeedRanges: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["TimelessJewelSeedRanges"],
+    TimelessJewels: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["TimelessJewels"],
+    TreeToPassive: globalThis["go"]["timeless-jewels-zh-tw"]["data"]["TreeToPassive"],
   }
 }

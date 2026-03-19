@@ -2,12 +2,12 @@ package exposition
 
 import (
 	"github.com/Vilsol/crystalline"
-	"github.com/Vilsol/timeless-jewels/calculator"
-	"github.com/Vilsol/timeless-jewels/data"
+	"github.com/EeroLai/timeless-jewels-zh-tw/calculator"
+	"github.com/EeroLai/timeless-jewels-zh-tw/data"
 )
 
 func Expose() *crystalline.Exposer {
-	e := crystalline.NewExposer("timeless-jewels")
+	e := crystalline.NewExposer("timeless-jewels-zh-tw")
 
 	e.ExposeFuncOrPanic(calculator.Calculate)
 	e.ExposeFuncOrPanic(calculator.ReverseSearch)

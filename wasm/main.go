@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Vilsol/timeless-jewels/wasm/exposition"
+	"github.com/EeroLai/timeless-jewels-zh-tw/wasm/exposition"
 )
 
 func main() {

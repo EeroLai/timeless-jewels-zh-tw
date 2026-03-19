@@ -719,7 +719,7 @@
   {/if}
 
   <div class="text-orange-500 absolute bottom-0 right-0 m-2">
-    <a href="https://github.com/Vilsol/timeless-jewels" target="_blank" rel="noopener">Source (Github)</a>
+    <a href="https://github.com/EeroLai/timeless-jewels-zh-tw" target="_blank" rel="noopener">Source (Github)</a>
   </div>
 </SkillTree>
 
